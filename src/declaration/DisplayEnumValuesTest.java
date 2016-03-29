@@ -10,5 +10,7 @@ public class DisplayEnumValuesTest {
 		for(Cards card: Cards.values()){
 			System.out.println(card);
 		}
+		System.out.println("------------ Use Of valueOf(String) -------------");
+		System.out.println(">>> "+Cards.valueOf("CLUB"));
 	}
 }

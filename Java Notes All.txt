@@ -149,6 +149,7 @@
 	> The original and backed collection are correlated (changes in one reflected in the other)
 44/ Arrays and Collections : Summary table page 593
 45/ Methods of Arrays and Collections: Summary table page 594
+	> Important PriorityQueue methods are : offer(...) (to add), peak() (to retrieve top element) and poll (to retrieve+remove top element)
 46/ String natural order : Space -> Uppercase -> Lowercase
 47/ Generics:
 	> Introduced in Java 1.5
@@ -168,17 +169,18 @@
 		* Method-specific : Can only be instantiated and used within the same method (of course after inner class declaration)
 		* Anonymous (Example System.out.println(new MyInterface() {  ...  });)
 	> new MyOuter().new MyInner(); or outerObjRef.new MyInner();
-	> Two flavors of anounymous inner classes:
-		* Anounymous "subclass" of the specified type
-		* Anounymous "implementer" of the specified interface
+	> Two flavours of anonymous inner classes:
+		* Anonymous "subclass" of the specified type
+		* Anonymous "implementer" of the specified interface
 50/ Generics:
 	> Generics are rarely used outside of collections
-	> public class NumberHolder<?> { ? aNum; } // NO
-	> public class NumberHolder<? extends Number> { } // NO
-	> List<Animal> aList = new ArrayList<Dog>(); //NO Animal and Dog Should be the same (even inheritence relationship not permited)
+	> public class NumberHolder<?> { } // NO
+	> public class NumberHolder<? extends Number> { } // NO: replace '?' by T
+	> List<Animal> aList = new ArrayList<Dog>(); //NO: Animal and Dog Should be the same (even inheritance relationship not permitted)
 	> All the generic type information is removed during compilation
-	> if we use <? extends Animal> as a method a parameter SO CANN'T ADD anything inside that method
-	> if we use <? super Dog> as a method a parameter SO NO PROBLEM with ADD
+	> If we use List<? extends Animal> in a method parameter SO CANN'T ADD anything inside that method
+	> If we use List<? super Dog> in a method parameter SO NO PROBLEM with ADD
+	> We can't use a class's generic type parameters in static methods or static fields
 51/ The check of type compatibility for:
 			-> Arrays : is runtime check (hence the presence of ArrayStoreException at runtime)
 			-> Lists  : is compile time check (hence the absence of any runtime exception)

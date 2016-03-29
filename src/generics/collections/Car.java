@@ -16,3 +16,12 @@ public class Car
         return name+" / Capacity: "+passengerCapacity;
     }
 }
+
+//Abstract class Can be derived from a concrete one. Although this is possible but recommended 
+abstract class AbstractCar extends Car {
+
+	public AbstractCar(String name, int passengerCapacity) {
+		super(name, passengerCapacity);
+	}
+	
+}
