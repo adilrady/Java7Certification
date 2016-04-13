@@ -15,6 +15,7 @@ public class NavigableMapTest {
 				+ examScores.descendingMap());
 		System.out.println("Details of those who passed the exam: "
 				+ examScores.tailMap(40));
+		System.out.println("Head Map"+examScores.headMap(50));
 		System.out.println("The lowest mark is: " + examScores.firstEntry());
 	}
 }
