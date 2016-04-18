@@ -28,6 +28,8 @@ public class DateTest
 		System.out.println("calendar.getTime() : " + (calendar.getFirstDayOfWeek() == Calendar.SUNDAY ? "TRUE" : "FALSE"));
 
 		NumberFormatExample();
+		formatDateTimeUsingPattern("EEEEE MMMMM yyyy HH:mm:ss.SSSZ");
+		test();
 	}
 
 	public static void NumberFormatExample()
@@ -46,5 +48,31 @@ public class DateTest
 		{
 			System.out.println(nf.format(f1));
 		}
+	}
+	
+	public static void formatDateTimeUsingPattern(String pattern){
+		System.out.println("------------ Date Time Formatting ------------");
+		SimpleDateFormat formatter = new SimpleDateFormat(pattern);
+		String dateTime = formatter.format(new Date());
+		System.out.println("Pattern : "+pattern+"\nResult  : "+dateTime);
+	}
+	
+	public static void test(){
+		System.out.println("-------------------------------------------------");
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd ");
+	    Calendar cal = Calendar.getInstance();
+	    Date date=cal.getTime();
+	    String[] days = new String[6];
+	    days[0]=sdf.format(date);
+	    
+	    for(int i = 5; i >= 0; i--){
+	        cal.add(Calendar.DAY_OF_MONTH,-1);
+	           date=cal.getTime();
+	           days[i]=sdf.format(date);
+	    }
+
+	    for(String x: days){
+	        System.out.println(x);
+	    }
 	}
 }

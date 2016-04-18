@@ -45,7 +45,7 @@ class Counter implements Runnable {
 
     public void run() {
         // call these two methods which acquire locks in different order
-        // depending on thread scheduling and the order of lock acquision,
+        // depending on thread scheduling and the order of lock acquisition,
         // a deadlock may or may not arise
         IncrementBallAfterRun();
         IncrementRunAfterBall();
