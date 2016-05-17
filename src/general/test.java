@@ -80,6 +80,10 @@ public class test
 			System.out.println("equals: Integer == int (true)");
 		}
 	}
+	
+	public static void foo(){
+		System.out.println("Fooooooo");
+	}
 }
 
 class testo extends test

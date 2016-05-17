@@ -2,12 +2,16 @@ package oop;
 
 
 public class Person {
-    private String name;
+    private String name = "sasasa";
     private int age;
     
     public Person(String name, int age){
         this.name = name;
         this.age = age;
+    }
+    
+    public Person(){
+//    	this(name, 22); //No, name should be static
     }
 
     

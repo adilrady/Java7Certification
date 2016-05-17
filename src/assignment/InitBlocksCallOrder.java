@@ -6,6 +6,13 @@ public class InitBlocksCallOrder {
 		new SubClass();
 		if(true ^ false)
 			System.out.println("Yes");
+		
+		int p = new Integer(0);
+//		int p = null; // Compiler Error
+		int a[] = {1, 2, 3};
+		for (int i : a) {
+			System.out.println(i);
+		}
 	}
 }
 

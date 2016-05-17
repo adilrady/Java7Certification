@@ -37,5 +37,10 @@ public class PriorityQueueExample {
 		for (int i : ia) {							//Review Queue
 			System.out.print(pq2.poll()+" ");
 		}
+		
+		PriorityQueue<String> pqString = new PriorityQueue<>();
+		pqString.add("Ahmed");
+		pqString.offer("Mohamed");
+		pqString.add("")
 	}
 }

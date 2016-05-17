@@ -1,0 +1,88 @@
+Java Class Design
+	- Overload resolution, compiler allows upcast not downcast : call with Integer will prefer method(Object o) over method(int i)
+	- Can not override static method
+	- The only implicit import allowed in a java file is the import of java.lang
+	- Can not declare enum inside method, ENUM can only be in top level class
+	- Abstract Factory used to create Factories which in turn create the concrete object on demand
+	- DAO design pattern is here to separate the Business logic from the Persistence logic
+	- Generic offers generic implementation with TYPE SAFETY
+	- Diamond operator introduced in Java 7
+	
+	- We can not declare static field with generic type T
+	- Can not use generics in exception class (extends Throwable)
+	- Each call of remove() on an iterator should be preceded by next() (Otherwise IllegalStateException)
+	- We can not add elements to List returned by Arrays.asList() method, though we still can modify elements, and modifications are reflected in the original array!!!
+	- Format specifier in printf() : %[flags][width][.precision]data_type
+	- In the try of try-with-resources we can only put object that implement the interface AutoClosable.
+	- If multiple call to writeObject to serialize a given object, only the first version is serialized, because of the check of SerializeVerionUID by JVM
+	- Normalize a Path means remove redundant symbols, like "." (current dir) and ".." (parent dir)
+	- Any attempt to use methods such as commit, rollback, setSavepoint, etc. will result in throwing a SQLException if auto-commit is not disabled
+	- When watching file/directory for changes, don't forget et call "key.reset();" at the end of the infinite loop
+	- Some Abstract classes : 
+		> Number - FilterReader
+	- A switch CAN NOT be used with a floating point type
+
+Generics & Collections
+	- Can not you SUBTYPING for generic parameters
+		> List<Object> list = ArrayList<Integer>() -> KO
+		> Solution : List<?> list = ArrayList<Integer>() -> OK
+	- When using generic type T inside class, pay attention to following forbidden uses:
+		> Can not declare class member T as static
+		> Can not use instantiation new T();
+		> can not use instantiation new T[5];
+	- Generics with wild card in case of method parameter:
+		> if <? extends A> : can read (get) but CAN NOT add (or set)
+		> if <? super A> : can add A or any subtype, but can only read Object : Object o = listParam.get(0)
+	- When returning a list using Array.asList we can not modify it, else UnsuportedOperationException
+	- implementing Comparator : pay attention to generic type : 
+		> ... implements Comparator<Integer> :then: public int compare(Integer i1, Integer i2){...}
+		> ... implements Comparator :then: public int compare(Object i1, Object i2){...}
+	- if implements comparable - and inside compareTo(Task t1, Task t2) we return 1 if t2.priority > t1.priority => inverse : bigger -> smaller
+	- Comparable:
+		> if t1 > t2 => 1 : normal order : from smaller to bigger
+		> if t2 > t1 => 1 : inverse : from bigger to smaller
+NIO
+	- Closeable extends AutoCloseable
+	
+Exceptions & Assertions
+	- New in Java 7 the Multi-Catch Block. But Can not combine parent-child exceptions in the same block
+	- Bad practice to call close() explicitly inside try-with-resources statement
+			
+Thread
+	- Concurrent Access Problems : DeadLock - LiveLock - Starvation - Race Condition (Access of rsc)
+	- To avoid DeadLock, avoid creating multiple lock for different resources, and if this happens, ensure that always the order of acquiring the lock is the same anywhere
+	- ReentrantLock : Calling lock.unlock() before lock.lock() cause IllegalMonitorException
+	- Callable throw checked exception, Runnable NOOOO
+	- ExecutorService can execute Callable and Runnable (using submit)
+	
+JDBC
+	- CallableStatement for calling stored procedures
+Local
+	- new Locale("TOTO", "TATA"); print local : OKKKKKK
+	
+Inner Classes
+	- Method-Local Inner classes can only use final variable of the enclosing method
+	- Method-Local Inner classes can only be final or abstract
+	- Anonymous class can not extend and implement in the same time nor implement more than one interface !!!!!!
+	- Outer.StaticInner inner = new Outer.StaticInner();
+	- Method-Local classes can access enclosing variables
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+

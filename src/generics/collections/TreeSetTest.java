@@ -1,5 +1,7 @@
 package generics.collections;
 
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -21,6 +23,12 @@ public class TreeSetTest {
 		System.out.println("set.tailSet(5) : "+set.tailSet(5)+"    //fromElement included");
 		System.err.println("set.subSet(2, 5) : "+set.subSet(2, 5));
 		
-		
+		Set sett = new TreeSet();
+		sett.add(0);
+		sett.add("azda");
+//		Iterator it = sett.iterator();
+//		while(it.hasNext()){
+//			System.out.println(it.next());
+//		}
 	}
 }

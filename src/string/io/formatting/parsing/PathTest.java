@@ -17,6 +17,15 @@ public class PathTest {
 		for (Path element : testFilePath) {
 			System.out.println("\t path element: " + element);
 		}
+		
+		// Normalizing Paths
+		Path testPath = Paths.get("D:\\test\\..\\testfile.txt");
+		System.out.println(testPath.normalize());
+		
+		// Absolute Path
+		Path relativePath = Paths.get("..\\testfile.txt");
+		System.out.println(relativePath.toAbsolutePath());
 	}
+	
 
 }

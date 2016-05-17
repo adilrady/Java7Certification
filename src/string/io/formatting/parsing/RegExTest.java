@@ -22,7 +22,21 @@ public class RegExTest {
 		System.out.println("----------------------------");
 		String str3 = "???";
 		System.out.println(str3.matches("^\\?+$"));
-		
+		System.out.println("---------  \\w matches numbers too, \\b matches word boundary ----------");
+		Pattern patrn = Pattern.compile("\\b\\w+\\D\\b");
+		Matcher match = patrn.matcher("AZER 1234 QSDF");
+		while (match.find()) {
+			System.out.println(">> " + match.group());
+		}
+
+		System.out.println("--------------\\b\\w+\\D\\b--------------");
+		String str0 = "BBBB 2013 BBBB7";
+		Pattern pattern0 = Pattern.compile("\\b\\w+\\D\\b");
+		Matcher matcher0 = pattern0.matcher(str0);
+		while (matcher0.find()) {
+			System.out.println(">>"+matcher0.group()+"<<");
+		}
+
 	}
 
 	private static void findMatching(String str, String regex) {
