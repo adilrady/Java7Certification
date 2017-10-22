@@ -18,3 +18,5 @@ Specific to OCP:
 You can clone this repo and import it as an Eclipse project in your local machine.
 
 Please Also find two text files OCA.txt and OCP.txt, which contain a summary notes from some preparation books I have read.
+
+Hands on programming...good luck!
